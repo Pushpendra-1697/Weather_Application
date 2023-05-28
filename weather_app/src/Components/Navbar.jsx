@@ -49,6 +49,7 @@ const Navbar: React.FC = () => {
       margin={"auto"}
       left="0px"
       zIndex={"10"}
+      bg='white'
     >
       <Flex h={8} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={8} alignItems={"center"}>

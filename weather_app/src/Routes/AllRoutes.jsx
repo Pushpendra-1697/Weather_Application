@@ -7,7 +7,7 @@ import { Box } from '@chakra-ui/react';
 
 function AllRoutes() {
   return (
-    <Box mt={['10%', '10%', '7%']}>
+    <Box mt={['15%', '15%', '7%']}>
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
