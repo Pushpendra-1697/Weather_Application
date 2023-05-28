@@ -29,35 +29,35 @@ function Dashboard() {
   };
 
   return (
-    <Box w={['100%','100%','70%']} m='auto' padding={'10px'}>
+    <Box w={['100%', '100%', '70%']} m='auto' padding={'10px'}>
       <Heading mb='2%' textAlign={'center'} color={'green.600'} fontSize={'28px'}>Dashboard</Heading>
-      <Input value={city} w={'200px'} onChange={(e) => setCity(e.target.value)} placeholder="Enter City Name" type="text" />
+      <Input mb='4%' value={city} w={'200px'} onChange={(e) => setCity(e.target.value)} placeholder="Enter City Name" type="text" />
       <Button variant={'outline'} color={'white'} bg='teal' ml='3px' onClick={getWeather}>{loading ? <BiLoader fontSize={'23px'} color="black" /> : "Search"}</Button>
       {isError && <Error />}
       {loading && <Loading />}
 
       {data && <Container id="container" m='4% 0 0 0'>
         <label style={{ color: 'red', borderBottom: '1px solid red' }}>City Name</label>
-        <Text>{data.name}</Text>
+        <Text mb='2%'>{data.name}</Text>
         <label style={{ color: 'red', borderBottom: '1px solid red' }}>City Temperature</label>
-        <Box display={'flex'} gap={'10px'}>
+        <Box mb='2%' display={'flex'} gap={'10px'}>
           <Text>{`Normal_Temp:- ${data.main.temp}`}<sup>0</sup>C</Text>
           <Text>{`Min_Temp:- ${data.main.temp_min}`}<sup>0</sup>C</Text>
           <Text>{`Max_Temp:- ${data.main.temp_max}`}<sup>0</sup>C</Text>
         </Box>
         <label style={{ color: 'red', borderBottom: '1px solid red' }}>City Humidity, Pressure & Sea_level</label>
-        <Box display={'flex'} gap={'10px'}>
+        <Box mb='2%' display={'flex'} gap={'10px'}>
           <Text>{`Humidity - ${data.main.humidity}`}</Text>
           <Text>{`Pressure - ${data.main.pressure}`}</Text>
           <Text>{`Sea_level - ${data.main.sea_level}`}</Text>
         </Box>
         <label style={{ color: 'red', borderBottom: '1px solid red' }}>Wind</label>
-        <Box>{`Deg: ${data.wind.deg} Gust: ${data.wind.gust} Speed: ${data.wind.speed}`}</Box>
-        <label style={{ color: 'red', borderBottom: '1px solid red' }}>Weather</label>
+        <Box mb='2%'>{`Deg: ${data.wind.deg} Gust: ${data.wind.gust} Speed: ${data.wind.speed}`}</Box>
+        <label style={{ color: 'red', borderBottom: '1px solid red', margin: '5% 0' }}>Weather</label>
         <Box mb='5%'>
           {data && data.weather.map(({ id, description }) =>
-            <Box key={id} m='1% 0'>
-              <Text>{description}</Text>
+            <Box key={id}>
+              <Text mb='2%'>{description}</Text>
               <video type='mp4/video' src="https://cdn.dribbble.com/userupload/3249146/file/original-c04cef3ec8076db4d9cbaf530a9e462f.mp4"></video>
             </Box>
           )}
